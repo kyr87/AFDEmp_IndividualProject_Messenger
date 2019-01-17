@@ -33,7 +33,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -43,11 +50,65 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DatabaseAction\DatabaseAccess.cs" />
+    <Compile Include="DatabaseAction\DatabaseEntities.cs" />
+    <Compile Include="FileStorage.cs" />
+    <Compile Include="HashCode.cs" />
+    <Compile Include="DatabaseAction\IDataHandling.cs" />
+    <Compile Include="ManageUser.cs" />
+    <Compile Include="Menus\MenuStyle.cs" />
+    <Compile Include="Message.cs" />
+    <Compile Include="Database Configurations\MessageTableConfiguration.cs" />
+    <Compile Include="Menus\MainMenu.cs" />
+    <Compile Include="MessageActions.cs" />
+    <Compile Include="Migrations\201812161701387_InitialCreate.cs" />
+    <Compile Include="Migrations\201812161701387_InitialCreate.Designer.cs">
+      <DependentUpon>201812161701387_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201812251003175_update-database.cs" />
+    <Compile Include="Migrations\201812251003175_update-database.Designer.cs">
+      <DependentUpon>201812251003175_update-database.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201901011356229_RemoveRead.cs" />
+    <Compile Include="Migrations\201901011356229_RemoveRead.Designer.cs">
+      <DependentUpon>201901011356229_RemoveRead.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Role.cs" />
+    <Compile Include="Menus\SignInRegister.cs" />
+    <Compile Include="Menus\SpecificMenu.cs" />
+    <Compile Include="User.cs" />
+    <Compile Include="Database Configurations\UserTableConfiguration.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201812161701387_InitialCreate.resx">
+      <DependentUpon>201812161701387_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812251003175_update-database.resx">
+      <DependentUpon>201812251003175_update-database.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201901011356229_RemoveRead.resx">
+      <DependentUpon>201901011356229_RemoveRead.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
