@@ -12,12 +12,10 @@ namespace AFDEmp_IndividualProject_Messenger
         IDataHandling DataProvider;
         SignInRegister Create;
         FileStorage file;
-        User ActiveUser;
 
-        public ManageUser(IDataHandling dataprovider, User CurrentUser)
+        public ManageUser(IDataHandling dataprovider)
         {
             DataProvider = dataprovider;
-            ActiveUser = CurrentUser;
             Create = new SignInRegister(DataProvider);
             file = new FileStorage();
         }

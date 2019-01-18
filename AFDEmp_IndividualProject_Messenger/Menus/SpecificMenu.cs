@@ -18,7 +18,7 @@ namespace AFDEmp_IndividualProject_Messenger
             DataProvider = dataprovider;
             ActiveUser = Current;
             PersonalMessage = new MessageActions(DataProvider, ActiveUser);
-            mu = new ManageUser(DataProvider, ActiveUser);
+            mu = new ManageUser(DataProvider);
         }
         public void MessagesMenu()
         {
